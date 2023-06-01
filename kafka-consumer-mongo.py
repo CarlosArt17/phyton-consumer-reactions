@@ -8,7 +8,7 @@ from pymongo.server_api import ServerApi
 
 import json
 
-uri = "mongodb+srv://jona2708:Jonathan2708@bdnosql.p8tt50o.mongodb.net/?retryWrites=true&w=majority"
+uri = "mongodb+srv://CarlosArt17:carlosart17@carlosart17.gs6c7g6.mongodb.net/?retryWrites=true&w=majority"
 
 # Create a new client and connect to the server
 # client = MongoClient(uri, server_api=ServerApi('1'))
@@ -27,14 +27,14 @@ try:
     client.admin.command('ping')
     print("Pinged your deployment. You successfully connected to MongoDB!")
 
-    db = client.bdnosql
+    db = client.carlosart17
     print("MongoDB Connected successfully!")
 except:
     print("Could not connect to MongoDB")
 
 
 consumer = KafkaConsumer('reactions', bootstrap_servers=[
-'my-kafka-0.my-kafka-headless.jona27081.svc.cluster.local:9092'])
+'my-kafka-0.my-kafka-headless.carlosart17.svc.cluster.local:9092'])
 # Parse received data from Kafka
 for msg in consumer:
     record = json.loads(msg.value)
